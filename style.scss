@@ -1,0 +1,113 @@
+$blue:      #264653;
+$lblue:     #2a9d8f;
+$yellow:    #e9c46a;
+$lorange:   #f4a261;
+$orange:    #e76f51;
+$font:      #000000;
+$ffont:     #bcbcbc;
+$altfont:   #dcdcdc;
+
+// most colors are not used
+
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    background-color: #131316;
+    color: $altfont;
+    margin: 0;
+    margin: auto 7rem;
+}
+
+section, h1, section.feedback {
+    display: grid;
+    place-items: center;
+    align-content: center;
+    min-height: 100vh;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+section {
+    &.feedback {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        gap: 2rem;
+        justify-content: center;
+        margin: auto 2rem;
+
+        div {
+            background-color: $ffont;
+            border-radius: 5px;
+            padding: 1rem;
+            &.feedback {
+                &__one, &__two {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    gap: 0.3rem;
+                    height: 10rem;
+                }
+            }
+            p {
+                font-style: italic;
+                color: #000000;
+            }
+            label {
+                align-self: flex-end;
+                font-weight: bold;
+                color: #000000;
+            }
+        }
+    }
+    &.header {
+        background-color: $blue;
+        padding: 1rem;
+        * {
+            color: $altfont;
+        }
+    }
+}
+
+#grid-col-span-2 {
+    grid-column: span 2;
+}
+
+.hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 1s;
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+@media(prefers-reduced-motion) {
+    .hidden {
+        transition: none;
+    }
+}
+
+.paragraph {
+    font-size: larger;
+    font-weight: 100;
+}
+
+.paragraphImp {
+    font-size: x-large;
+    font-weight: 100;
+}
+
+.copyright {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
