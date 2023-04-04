@@ -5,8 +5,7 @@
 body {
   background-color: #131316;
   color: #dcdcdc;
-  margin: 0;
-  margin: auto 7rem;
+  margin: 0 7rem;
 }
 
 section, h1, section.feedback {
@@ -38,7 +37,8 @@ section.feedback div.feedback__one, section.feedback div.feedback__two {
   flex-direction: column;
   justify-content: space-between;
   gap: 0.3rem;
-  height: 10rem;
+  min-height: 10rem;
+  height: auto;
 }
 section.feedback div p {
   font-style: italic;
@@ -93,4 +93,21 @@ section.header * {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+@media (max-width: 450px) {
+  body {
+    margin: 1rem;
+  }
+  section.feedback {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  section.feedback__one, section.feedback__two {
+    height: auto;
+  }
+  #grid-col-span-2 {
+    grid-column: span 1;
+  }
 }/*# sourceMappingURL=style.css.map */
